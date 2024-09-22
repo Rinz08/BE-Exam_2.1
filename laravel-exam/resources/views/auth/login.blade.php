@@ -11,13 +11,15 @@
                     <form method="POST" action="{{ route('login') }}">
                         @csrf
 
+                        <!-- Modified: Use a single input for both username or email -->
                         <div class="row mb-3">
-                            <label for="email" class="col-md-4 col-form-label text-md-end">{{ __('Email Address') }}</label>
+                            <label for="login" class="col-md-4 col-form-label text-md-end">{{ __('Username or Email') }}</label>
 
                             <div class="col-md-6">
-                                <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
+                                <input id="login" type="text" class="form-control @error('login') is-invalid @enderror" name="login" value="{{ old('login') }}" required autocomplete="login" autofocus>
 
-                                @error('email')
+                                <!-- Updated error handling -->
+                                @error('login')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
                                     </span>
@@ -25,6 +27,7 @@
                             </div>
                         </div>
 
+                        <!-- Password field remains unchanged -->
                         <div class="row mb-3">
                             <label for="password" class="col-md-4 col-form-label text-md-end">{{ __('Password') }}</label>
 
@@ -39,6 +42,7 @@
                             </div>
                         </div>
 
+                        <!-- Remember Me checkbox remains unchanged -->
                         <div class="row mb-3">
                             <div class="col-md-6 offset-md-4">
                                 <div class="form-check">
@@ -51,6 +55,7 @@
                             </div>
                         </div>
 
+                        <!-- Submit button and links remain unchanged -->
                         <div class="row mb-0">
                             <div class="col-md-8 offset-md-4">
                                 <button type="submit" class="btn btn-primary">
