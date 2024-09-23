@@ -1,0 +1,10 @@
+<template>
+    <footer class="bg-blue-600 text-white p-4 text-center">
+        <p>&copy; 2024 Your Company. All rights reserved.</p>
+    </footer>
+</template>
+
+<script setup>
+</script>
+
+<style></style>
