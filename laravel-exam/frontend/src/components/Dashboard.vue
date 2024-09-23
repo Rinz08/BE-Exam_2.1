@@ -7,8 +7,17 @@
   </template>
   
   <script>
+  import axios from 'axios';
+
   export default {
-    name: "Dashboard",
+    name: "DashboardView",
+    mounted() {
+    axios.get('/api/data').then(response => {
+      console.log(response.data);
+    }).catch(error => {
+      console.error(error);
+    });
+  },
     async created() {
     try {
       // Make a request to the backend to check if the user is authenticated

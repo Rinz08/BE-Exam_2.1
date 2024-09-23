@@ -40,3 +40,7 @@ require __DIR__.'/auth.php';
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+Route::get('/{any}', function () {
+    return view('index');  // Vue will handle the routing
+})->where('any', '.*');
